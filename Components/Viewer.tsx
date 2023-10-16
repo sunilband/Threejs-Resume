@@ -81,8 +81,8 @@ export default function Sample({ slug }: Props) {
         </h1>
 
         <div className="flex justify-center items-center gap-4">
-        <button onClick={handleDownloadPDF} className=" hover:scale-105 hover:invert transition-all duration-200 ease-in-out"><Image src={downloadLogo} height={30} width={30} alt="download"/></button>
-        <button className="font-medium  tracking-wider border p-3 rounded-xl bg-black   text-white"
+        <button onClick={handleDownloadPDF} className="dl"><Image src={downloadLogo} height={30} width={30} alt="download"/></button>
+        <button className="contactBtn"
         onClick={()=>{router.push("https://sunilband.netlify.app/#contact")}}
         >Contact</button>
         </div>
