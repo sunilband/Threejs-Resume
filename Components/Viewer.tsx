@@ -63,8 +63,10 @@ export default function Sample({ slug }: Props) {
   }
   const handleDownloadPDF = () => {
     const fileURL = `./${slug}.pdf`;
-    const file= new File([fileURL], "sunil_band_resume.pdf", { type: "application/pdf" });
-    FileSaver.saveAs(file);
+   
+    // FileSaver.saveAs(fileURL, "sunil_band_resume.pdf",);
+    // save file
+    FileSaver.saveAs(fileURL, "sunil_band_resume.pdf");
   };
 
   return (
