@@ -71,7 +71,7 @@ export default function Sample({ slug }: Props) {
 
   return (
     <div className="Example">
-      <div className="flex justify-between glass px-4 ">
+      <div className="head">
         <h1
           className="text-center  tracking-wider cursive font-bold text-black"
           style={{ fontSize: "30px " }}
