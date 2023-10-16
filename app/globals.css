@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +12,7 @@
   padding-left: 1rem !important;
   padding-right: 1rem !important;
   color: black !important;
+  
 }
 
 .dl{
@@ -38,7 +38,13 @@
   gap: 15px;
 }
 .cursive{
-  font-family: 'Cedarville Cursive', cursive;
+  font-family: 'Cedarville Cursive', cursive !important;
+}
+.manSvg{
+  position:absolute;
+  top:-233px;
+  left:400px; 
+  visibility: collapse;
 }
 
 .glass {
@@ -47,4 +53,12 @@
 
   backdrop-filter: blur(2px);
   z-index: 0;
+}
+
+/* make the manSvg only visible after 900px */
+@media screen and (min-width: 900px) {
+  .manSvg {
+    visibility: visible;
+  }
+  
 }

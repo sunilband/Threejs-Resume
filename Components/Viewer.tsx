@@ -7,11 +7,11 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import Image from "next/image";
 import downloadLogo from "../public/downloadIcon.svg";
+import SittingMan from "../public/sittingMan.svg";
 import "./Viewer.css";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 import type { PDFDocumentProxy } from "pdfjs-dist";
 import FileSaver from "file-saver";
-
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
@@ -32,7 +32,7 @@ type Props = {
   slug: string;
 };
 export default function Sample({ slug }: Props) {
-  const router = useRouter()
+  const router = useRouter();
   const [file, setFile] = useState<PDFFile>(`./${slug}.pdf`);
   const [numPages, setNumPages] = useState<number>();
   const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);
@@ -48,24 +48,16 @@ export default function Sample({ slug }: Props) {
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
 
-  // function onFileChange(event: React.ChangeEvent<HTMLInputElement>): void {
-  //   const { files } = event.target;
 
-  //   if (files && files[0]) {
-  //     setFile(files[0] || null);
-  //   }
-  // }
-
+  const [visibleMan,setVisibleMan]=useState(false)
   function onDocumentLoadSuccess({
     numPages: nextNumPages,
   }: PDFDocumentProxy): void {
     setNumPages(nextNumPages);
+    setVisibleMan(true)
   }
   const handleDownloadPDF = () => {
     const fileURL = `./${slug}.pdf`;
-   
-    // FileSaver.saveAs(fileURL, "sunil_band_resume.pdf",);
-    // save file
     FileSaver.saveAs(fileURL, "sunil_band_resume.pdf");
   };
 
@@ -81,22 +73,24 @@ export default function Sample({ slug }: Props) {
         </h1>
 
         <div className="btnContainer">
-        <button onClick={handleDownloadPDF} className="dl"><Image src={downloadLogo} height={30} width={30} alt="download"/></button>
-        <button className="contactBtn"
-        onClick={()=>{router.push("https://sunilband.netlify.app/#contact")}}
-        >Contact</button>
-         
-          
-        
+          <button onClick={handleDownloadPDF} className="dl">
+            <Image src={downloadLogo} height={30} width={30} alt="download" />
+          </button>
+          <button
+            className="contactBtn"
+            onClick={() => {
+              router.push("https://sunilband.netlify.app/#contact");
+            }}
+          >
+            Contact
+          </button>
         </div>
-        
       </div>
       <div className="Example__container">
-        {/* <div className="Example__container__load">
-          <label htmlFor="file">Load from file:</label>{' '}
-          <input onChange={onFileChange} type="file" />
-        </div> */}
-        <div className="Example__container__document" ref={setContainerRef}>
+     
+        <div className="Example__container__document" ref={setContainerRef} 
+        style={{position:"relative"}}
+        > {visibleMan&&<Image src={SittingMan} width={300} height={300} alt="sittingMan" className="manSvg"/>}
           <Document
             file={file}
             onLoadSuccess={onDocumentLoadSuccess}
