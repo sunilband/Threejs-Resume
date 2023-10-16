@@ -30,6 +30,12 @@
   background-color: #000;
   color: #fff;
 }
+.btnContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
 .cursive{
   font-family: 'Cedarville Cursive', cursive;
 }

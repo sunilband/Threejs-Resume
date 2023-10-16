@@ -80,7 +80,7 @@ export default function Sample({ slug }: Props) {
           Sunil Band
         </h1>
 
-        <div className="flex justify-center items-center gap-4">
+        <div className="btnContainer">
         <button onClick={handleDownloadPDF} className="dl"><Image src={downloadLogo} height={30} width={30} alt="download"/></button>
         <button className="contactBtn"
         onClick={()=>{router.push("https://sunilband.netlify.app/#contact")}}
