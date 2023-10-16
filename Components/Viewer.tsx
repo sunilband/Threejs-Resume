@@ -11,7 +11,7 @@ import "./Viewer.css";
 import { useRouter } from 'next/navigation'
 import type { PDFDocumentProxy } from "pdfjs-dist";
 import FileSaver from "file-saver";
-import { saveAs } from "file-saver";
+
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
