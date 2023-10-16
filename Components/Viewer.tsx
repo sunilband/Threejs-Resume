@@ -25,7 +25,7 @@ const options = {
 
 const resizeObserverOptions = {};
 
-const maxWidth = 800;
+const maxWidth = 900;
 
 type PDFFile = string | File | null;
 type Props = {
@@ -85,6 +85,9 @@ export default function Sample({ slug }: Props) {
         <button className="contactBtn"
         onClick={()=>{router.push("https://sunilband.netlify.app/#contact")}}
         >Contact</button>
+         
+          
+        
         </div>
         
       </div>
