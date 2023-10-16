@@ -71,9 +71,9 @@ export default function Sample({ slug }: Props) {
 
   return (
     <div className="Example">
-      <header className="flex justify-between glass px-4 ">
+      <div className="flex justify-between glass px-4 ">
         <h1
-          className="text-center  tracking-wider cursive font-bold"
+          className="text-center  tracking-wider cursive font-bold text-black"
           style={{ fontSize: "30px " }}
         >
           {" "}
@@ -81,13 +81,13 @@ export default function Sample({ slug }: Props) {
         </h1>
 
         <div className="flex justify-center items-center gap-4">
-        <button onClick={handleDownloadPDF} className="invert hover:scale-105 transition-all duration-200 ease-in-out"><Image src={downloadLogo} height={30} width={30} alt="download"/></button>
-        <button className="font-medium  tracking-wider border p-3 rounded-xl bg-[#333333] text-white"
+        <button onClick={handleDownloadPDF} className=" hover:scale-105 hover:invert transition-all duration-200 ease-in-out"><Image src={downloadLogo} height={30} width={30} alt="download"/></button>
+        <button className="font-medium  tracking-wider border p-3 rounded-xl bg-black   text-white"
         onClick={()=>{router.push("https://sunilband.netlify.app/#contact")}}
         >Contact</button>
         </div>
         
-      </header>
+      </div>
       <div className="Example__container">
         {/* <div className="Example__container__load">
           <label htmlFor="file">Load from file:</label>{' '}
