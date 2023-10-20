@@ -4,38 +4,12 @@
 @tailwind utilities;
 
 
-.head{
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding-top: 0.5rem !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-  color: black !important;
-  
-}
-
-.dl{
-  transition: all 200ms ease-in-out;
-}
-.dl:hover{
-  transform: scale(1.05);
-  filter: invert(100%);
-}
-.contactBtn{
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  border: 1px solid #000;
-  padding: 0.75rem;
-  border-radius: 1rem;
-  background-color: #000;
-  color: #fff;
-}
 .btnContainer{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  right: 0;
 }
 .cursive{
   font-family: 'Cedarville Cursive', cursive !important;
@@ -50,7 +24,6 @@
 .glass {
   /* background: rgba(255, 255, 255, 0.078); */
   background: rgba(101, 101, 101, 0.174);
-
   backdrop-filter: blur(2px);
   z-index: 0;
 }

@@ -1,19 +1,31 @@
 body {
     margin: 0;
-    background-color: #525659;
+    background-color: #87CEEB;
   }
 
 
-.logo{
   
+.head{
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  color: black !important; 
+  background-color: transparent !important;
+}
+
+.logo{
     text-align: center;
     letter-spacing: 0.05em;
     font-family: cursive;
     font-weight: bold;
     color: #000;
+    cursor: pointer;
 
 }
-  
   .Example__container {
     display: flex;
     flex-direction: column;
