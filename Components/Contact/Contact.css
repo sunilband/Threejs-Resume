@@ -11,7 +11,7 @@ overflow: hidden;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: -30px;
+    margin-top: -50px;
 }
 
 .orange {
@@ -19,28 +19,30 @@ overflow: hidden;
   }
   
   .form-container {
-  
+    border: 1px solid black;
     max-width: 700px;
     margin: 30px;
-    background-color: #001925;
+    /* background-color: #E8E8E8; */
     padding: 30px;
     border-left: 5px solid black;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    border-bottom: 4px solid black;
+    border-radius: 20px;
   }
   
   .heading {
     display: block;
-    color: white;
+    color: black;
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 20px;
   }
   
   .form-container .form .input {
+   
     color: #87a4b6;
     width: 100%;
-    background-color: #002733;
-    border: none;
+    /* background-color: black; */
+    border: 1px solid black;
     outline: none;
     padding: 10px;
     margin-bottom: 20px;
@@ -58,7 +60,7 @@ overflow: hidden;
     padding: 10px;
     border: none;
     outline: none;
-    background-color: #013747;
+    /* background-color: black; */
     color: black;
     font-weight: bold;
     resize: none;
@@ -79,25 +81,29 @@ overflow: hidden;
   
   .form-container .form .button-container .send-button {
     flex-basis: 70%;
-    background: black;
-    padding: 10px;
-    color: white;
+    position: relative;
     text-align: center;
+    padding: 10px;
+    color: black;
     font-weight: bold;
-    border: 1px solid transparent;
+    background: white;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
     transition: all 0.2s ease-in-out;
+    border-bottom: 4px solid black;
   }
   
   .form-container .form .button-container .send-button:hover {
     background: white;
-    border: 1px solid black;
     color: black;
+    transform: translateY(-0.33em);
   }
   
   .form-container .form .button-container .reset-button-container {
     filter: drop-shadow(1px 1px 0px black);
-    flex-basis: 30%;
+    flex-basis: 30%; 
   }
+
+  
   
   .form-container .form .button-container .reset-button-container .reset-button {
     position: relative;
@@ -108,9 +114,17 @@ overflow: hidden;
     background: white;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
     transition: all 0.2s ease-in-out;
+    border-bottom: 4px solid black;
   }
+
   
   .form-container .form .button-container .reset-button-container .reset-button:hover {
-    background: black;
-    color: white;
+    transform: translateY(-0.33em);
+   }
+
+  
+
+  .form-container .form .button-container .reset-button:active  {
+    /* Push the button downwards when pressed */
+    transform: translateY(0);
   }

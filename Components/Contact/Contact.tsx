@@ -53,11 +53,9 @@ const Contact = (props: Props) => {
   const router = useRouter();
   const path = usePathname();
   const lastPath = path.split("/")[path.split("/").length - 1];
-  console.log(lastPath);
   const handleDownloadPDF = () => {
     // const fileURL = `./${slug}.pdf`;
     const fileURL = `./${path.split("/")[path.split("/").length - 2]}.pdf`;
-    console.log(fileURL);
     FileSaver.saveAs(fileURL, "sunil_band_resume.pdf");
   };
 
@@ -108,7 +106,7 @@ const Contact = (props: Props) => {
       </div>
       {/*  */}
       <div className="formPage ">
-        <div className="form-container">
+        <div className="form-container glass">
           <form className="form" ref={form} onSubmit={sendEmail}>
             <span className="heading">Get in touch</span>
             <input
