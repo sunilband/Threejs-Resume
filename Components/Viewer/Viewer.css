@@ -3,7 +3,19 @@ body {
     background-color: #87CEEB;
   }
 
+.dog{
+  position:absolute;
+  top:-75px;
+  left:320px; 
+  visibility: collapse;
+}
 
+@media screen and (min-width: 900px) {
+  .dog {
+    visibility: visible;
+  }
+  
+}
   
 .head{
   display: flex !important;

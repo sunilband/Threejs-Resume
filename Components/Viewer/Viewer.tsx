@@ -12,6 +12,7 @@ import "./Viewer.css";
 import { useRouter,usePathname } from "next/navigation";
 import type { PDFDocumentProxy } from "pdfjs-dist";
 import FileSaver from "file-saver";
+import Wiggle from "../../public/wiggle.gif"
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
@@ -104,16 +105,34 @@ export default function Sample({ slug }: Props) {
           ref={setContainerRef}
           style={{ position: "relative" }}
         >
-          {" "}
           {visibleMan && (
-            <Image
+            <>
+             <Image
               src={SittingMan}
               width={300}
               height={300}
               alt="sittingMan"
               className="manSvg"
             />
+             <Image
+              src={Wiggle}
+              width={170}
+              height={170}
+              alt="dog"
+              className="dog"
+            />
+            {/* <Dog /> */}
+            </>
+           
           )}
+
+          {/* {
+            visibleMan && (
+              <div className="absolute top-0">
+                
+              </div>
+            )
+          } */}
           <Document
             file={file}
             onLoadSuccess={onDocumentLoadSuccess}
