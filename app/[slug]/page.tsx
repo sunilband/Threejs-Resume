@@ -1,7 +1,7 @@
 import BG from "@/Components/BG/BG";
 import Viewer from "@/Components/Viewer/Viewer";
 import React from "react";
-import Dog from "@/Components/Dog/Dog";
+
 
 
 type Props = {
