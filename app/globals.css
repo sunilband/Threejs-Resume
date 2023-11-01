@@ -3,7 +3,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* scrollbar */
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #5b8be0 #ffffff;
+  }
 
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 20px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 10px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #5b8be0;
+    border-radius: 10px;
+    border: 3px solid black;
+  }
+
+/*  */
 .glass {
   /* background: rgba(255, 255, 255, 0.078); */
   background: rgba(101, 101, 101, 0.078);
