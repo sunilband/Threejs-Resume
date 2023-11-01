@@ -8,7 +8,14 @@ body {
   top:-75px;
   left:320px; 
   visibility: collapse;
+  animation: reversed 1s linear infinite;
 }
+
+
+
+
+
+
 
 @media screen and (min-width: 900px) {
   .dog {

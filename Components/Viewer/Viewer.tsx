@@ -14,6 +14,7 @@ import type { PDFDocumentProxy } from "pdfjs-dist";
 import FileSaver from "file-saver";
 import Wiggle from "../../public/wiggle.gif"
 
+
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
   import.meta.url
@@ -62,6 +63,7 @@ export default function Sample({ slug }: Props) {
   };
   const path=usePathname();
   const lastPath=path.split("/")[path.split("/").length-1];
+  
   return (
     <div className="Example">
       
@@ -70,7 +72,6 @@ export default function Sample({ slug }: Props) {
           className="logo cursive"
           style={{ fontSize: "30px " }}
         >
-          {" "}
           Sunil Band
         </h1>
 
@@ -114,14 +115,17 @@ export default function Sample({ slug }: Props) {
               alt="sittingMan"
               className="manSvg"
             />
-             <Image
+            <Image
+             id="reverse-gif"
               src={Wiggle}
               width={170}
               height={170}
               alt="dog"
-              className="dog"
-            />
-            {/* <Dog /> */}
+              className="dog reverse"
+            
+            /> 
+           
+       
             </>
            
           )}
