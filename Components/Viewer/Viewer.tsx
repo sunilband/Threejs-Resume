@@ -122,7 +122,6 @@ export default function Sample({ slug }: Props) {
               height={170}
               alt="dog"
               className="dog reverse"
-            
             /> 
            
        
