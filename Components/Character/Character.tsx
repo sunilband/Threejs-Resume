@@ -8,7 +8,10 @@ type Props = {
 };
 
 const Character = ({ setLoaded, loaded }: Props) => {
-  const modelSrc = "/sunilCasualModel.glb";
+  // get character model from https://animaze.readyplayer.me/avatar?id=65f70e16e47ed7cab5aad990
+  // const modelSrc = "/sunilCasualModel.glb";
+  const modelSrc = "/sunilFormalModel.glb";
+
   const animationSrc = "/idleAnimation.fbx";
   return (
     <div className="h-screen w-screen fixed right-[550px]">
@@ -41,7 +44,7 @@ const Character = ({ setLoaded, loaded }: Props) => {
           cheekSquintLeft: 0.3,
           eyeLookInRight: 0.6,
           eyeLookOutLeft: 0.6,
-          jawOpen: 0.1,
+          jawOpen: 0,
           mouthDimpleLeft: 0.3,
           mouthPressLeft: 0.1,
           mouthSmileLeft: 0.2,
