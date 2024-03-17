@@ -70,7 +70,7 @@ export default function Sample({ slug, setLoaded, loaded }: Props) {
   const lastPath = path.split("/")[path.split("/").length - 1];
 
   return (
-    <div className="Example bg-[#282038fb]">
+    <div className="Example">
       <div className="head">
         <h1 className="logo cursive" style={{ fontSize: "30px " }}>
           Sunil Band
@@ -107,11 +107,11 @@ export default function Sample({ slug, setLoaded, loaded }: Props) {
         </div>
       </div>
 
-      <div className="Example__container">
+      <div className="Example__container relative">
         <div
-          className="Example__container__document sm:flex justify-end sm:px-20"
+          className="Example__container__document sm:absolute  right-10 sm:w-[60%]"
           ref={setContainerRef}
-          style={{ position: "relative" }}
+          style={{ width: "60%", height: "100%" }}
         >
           {/* {visibleMan && (
             <>
