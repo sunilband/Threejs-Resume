@@ -1,21 +1,39 @@
+"use client";
 import BG from "@/Components/BG/BG";
+import Character from "@/Components/Character/Character";
+import Spinner from "@/Components/Spinner/Spinner";
 import Viewer from "@/Components/Viewer/Viewer";
 import React from "react";
-
-
+import { useState } from "react";
 
 type Props = {
   params: { slug: string };
 };
 
-const page = ({ params }: Props) => {
+const Page = ({ params }: Props) => {
+  const [loaded, setLoaded] = useState({
+    character: true,
+    viewer: false,
+  });
+
   return (
     <>
-      <BG /> 
-     <Viewer slug={params.slug} />
-     
+      {/* <BG />  */}
+      {/* if any of loaded is false show p tag loading */}
+
+      <div
+        className={`${loaded.character && loaded.viewer ? "visible" : "invisible"}`}
+      >
+        <Character setLoaded={setLoaded} loaded={loaded} />
+      </div>
+
+      <div
+        className={`${loaded.character && loaded.viewer ? "visible" : "invisible"}`}
+      >
+        <Viewer slug={params.slug} setLoaded={setLoaded} loaded={loaded} />
+      </div>
     </>
   );
 };
 
-export default page;
+export default Page;

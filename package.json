@@ -9,8 +9,12 @@
     "lint": "next lint",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@readyplayerme/visage": "^5.1.0",
     "@types/file-saver": "^2.0.5",
     "@types/node": "20.8.6",
     "@types/pdfjs-dist": "^2.10.378",

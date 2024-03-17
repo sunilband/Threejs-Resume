@@ -31,8 +31,10 @@ const maxWidth = 900;
 type PDFFile = string | File | null;
 type Props = {
   slug: string;
+  setLoaded: any;
+  loaded: any;
 };
-export default function Sample({ slug }: Props) {
+export default function Sample({ slug, setLoaded, loaded }: Props) {
   const router = useRouter();
   const [file, setFile] = useState<PDFFile>(`./${slug}.pdf`);
   const [numPages, setNumPages] = useState<number>();
@@ -55,6 +57,10 @@ export default function Sample({ slug }: Props) {
   }: PDFDocumentProxy): void {
     setNumPages(nextNumPages);
     setVisibleMan(true);
+    setLoaded({
+      ...loaded,
+      viewer: true,
+    });
   }
   const handleDownloadPDF = () => {
     const fileURL = `./${slug}.pdf`;
@@ -64,7 +70,7 @@ export default function Sample({ slug }: Props) {
   const lastPath = path.split("/")[path.split("/").length - 1];
 
   return (
-    <div className="Example">
+    <div className="Example bg-[#282038fb]">
       <div className="head">
         <h1 className="logo cursive" style={{ fontSize: "30px " }}>
           Sunil Band
@@ -100,13 +106,14 @@ export default function Sample({ slug }: Props) {
           </button>
         </div>
       </div>
+
       <div className="Example__container">
         <div
-          className="Example__container__document"
+          className="Example__container__document sm:flex justify-end sm:px-20"
           ref={setContainerRef}
           style={{ position: "relative" }}
         >
-          {visibleMan && (
+          {/* {visibleMan && (
             <>
               <Image
                 src={SittingMan}
@@ -124,15 +131,8 @@ export default function Sample({ slug }: Props) {
                 className="dog reverse"
               />
             </>
-          )}
+          )} */}
 
-          {/* {
-            visibleMan && (
-              <div className="absolute top-0">
-                
-              </div>
-            )
-          } */}
           <Document
             file={file}
             onLoadSuccess={onDocumentLoadSuccess}
