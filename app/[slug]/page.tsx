@@ -3,7 +3,7 @@ import BG from "@/Components/BG/BG";
 import Character from "@/Components/Character/Character";
 import Spinner from "@/Components/Spinner/Spinner";
 import Viewer from "@/Components/Viewer/Viewer";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 type Props = {
@@ -19,7 +19,8 @@ const Page = ({ params }: Props) => {
   return (
     <>
       {/* <BG />  */}
-      {/* if any of loaded is false show p tag loading */}
+
+      {(!loaded.character || !loaded.viewer) && <Spinner />}
 
       <div
         className={`${loaded.character && loaded.viewer ? "visible" : "invisible"}`}
