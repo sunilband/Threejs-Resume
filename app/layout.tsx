@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Schema from "./schema";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <ToastContainer />
+        <Schema />
       </body>
     </html>
   );
