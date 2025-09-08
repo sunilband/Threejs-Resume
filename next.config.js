@@ -4,6 +4,15 @@ const nextConfig = {
     config.resolve.alias.canvas = false;
     return config;
   },
+
+  async rewrites() {
+    return [
+      {
+        source: "/",
+        destination: "/resume",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

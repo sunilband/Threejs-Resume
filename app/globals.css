@@ -1,34 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* scrollbar */
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #5b8be0 #ffffff;
-  }
+* {
+  scrollbar-width: none;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 12px;
-    height: 20px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: transparent;
-    margin: 10px;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #5b8be0;
-    border-radius: 10px;
-    border: 3px solid black;
-  }
-
-/*  */
 .glass {
   /* background: rgba(255, 255, 255, 0.078); */
   background: rgba(101, 101, 101, 0.078);
@@ -36,20 +14,20 @@
   z-index: 0;
 }
 
-.btnContainer{
+.btnContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   right: 0;
 }
-.cursive{
-  font-family: 'Cedarville Cursive', cursive !important;
+.cursive {
+  font-family: "Cedarville Cursive", cursive !important;
 }
-.manSvg{
-  position:absolute;
-  top:-233px;
-  left:400px; 
+.manSvg {
+  position: absolute;
+  top: -233px;
+  left: 400px;
   visibility: collapse;
 }
 
@@ -65,5 +43,4 @@
   .manSvg {
     visibility: visible;
   }
-  
 }
